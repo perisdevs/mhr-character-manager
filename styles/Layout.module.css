@@ -1,0 +1,19 @@
+.container {
+    height: 100vh;
+    color: burlywood;
+    margin: 0;
+}
+
+.header {
+    text-align: center;
+    border-bottom: 2px solid burlywood;
+    margin: auto;
+    width: 90vw;
+}
+
+.footer {
+    text-align: center;
+    border-top: 2px solid burlywood;
+    margin: auto;
+    width: 90vw;
+}

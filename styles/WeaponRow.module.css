@@ -1,0 +1,26 @@
+.weapon {
+    display: flex;
+    flex-direction: row;    
+    width: 80%;
+    border-bottom: 1px solid burlywood;
+}
+
+.weapon > * {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 10vh;
+    width: 20%;    
+}
+
+.skillSlots {
+    border: solid blue 2px;
+    min-height: 50%;
+}
+
+.rampageSlot {
+    border: solid red 2px;
+    height: 50%;
+}

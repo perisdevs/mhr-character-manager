@@ -1,0 +1,4 @@
+.sharpnesses {
+    display: flex;
+    flex-direction: column;
+}
