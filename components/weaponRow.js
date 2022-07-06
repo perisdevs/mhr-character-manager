@@ -22,8 +22,14 @@ export default function WeaponRow({ weapon }) {
                     <>---</>
                 )}
             </div>
-            <div className={styles.weaponProp}>{weapon.defenseBonus}</div>
-            <div className={styles.weaponProp}>{weapon.affinity}</div>
+            <div className={styles.weaponProp}>{(weapon.defenseBonus) ? (
+                <>{weapon.defenseBonus}</>
+            ) : (<>0</>)}
+            </div>
+            <div className={styles.weaponProp}>{(weapon.affinity) ? (
+                <>{weapon.affinity}</>
+            ) : (<>0</>)}
+            </div>
             <div className={styles.weaponProp}>
                 {(weapon.topSharpness && weapon.bottomSharpness) ? (
                     <Sharpness top={weapon.topSharpness} bottom={weapon.bottomSharpness} />
