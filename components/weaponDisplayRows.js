@@ -1,78 +1,168 @@
 import WeaponRow from "./weaponRow";
 import styles from '../styles/WeaponDisplayRows.module.css';
 import { useState } from 'react';
-import { sortWeaponsByAffinityAscending, sortWeaponsByAffinityDescending, sortWeaponsByDamageAscending, sortWeaponsByDamageDescending, sortWeaponsByDBonusAscending, sortWeaponsByDBonusDescending, sortWeaponsByEDamageAscending, sortWeaponsByEDamageDescending, sortWeaponsByNameAscending, sortWeaponsByNameDescending, sortWeaponsByRarityAscending, sortWeaponsByRarityDescending, sortWeaponsByRSlotAscending, sortWeaponsByRSlotDescending, sortWeaponsBySharpnessAscending, sortWeaponsBySharpnessDescending, sortWeaponsBySlotsAscending, sortWeaponsBySlotsDescending, sortWeaponsByTypeAscending, sortWeaponsByTypeDescending } from "../lib/sorts";
 
 export default function WeaponDisplayRows({ weapons }) {    
     
-    const [weaponArray, setWeapons] = useState(weapons);   
-    const [sortState, setState] = useState(0);        
+    const [weaponArray, setWeapons] = useState(weapons);        
 
-    function sortWeapons(type, state) {      
+    async function handleSubmit(event) {
+        event.preventDefault();
+        setWeapons(null);
+
+        let query = '/weapons?';
+
+        const inputs = Array.from(event.target.elements);
         
-        switch(state) {
+        inputs.forEach((input) => {
 
-            case 0:                
-                switch(type) {
-                    case 'rarity': setWeapons(sortWeaponsByRarityAscending(weaponArray)); break;
-                    case 'type': setWeapons(sortWeaponsByTypeAscending(weaponArray)); break;
-                    case 'name': setWeapons(sortWeaponsByNameAscending(weaponArray)); break;
-                    case 'damage': setWeapons(sortWeaponsByDamageAscending(weaponArray)); break;
-                    case 'slots': setWeapons(sortWeaponsBySlotsAscending(weaponArray)); break;                    
-                    case 'rslot': setWeapons(sortWeaponsByRSlotAscending(weaponArray)); break;
-                    case 'edamage': setWeapons(sortWeaponsByEDamageAscending(weaponArray)); break;
-                    case 'dbonus': setWeapons(sortWeaponsByDBonusAscending(weaponArray)); break;
-                    case 'affinity': setWeapons(sortWeaponsByAffinityAscending(weaponArray)); break;
-                    case 'sharpness': setWeapons(sortWeaponsBySharpnessAscending(weaponArray)); break;
-                }
-                setState(1);
-                break;
+            if (input.value) query += `${input.name}=${input.value}&`;                       
+        });
 
-            case 1:                
-                switch(type) {                    
-                    case 'rarity': setWeapons(sortWeaponsByRarityDescending(weaponArray)); break;
-                    case 'type': setWeapons(sortWeaponsByTypeDescending(weaponArray)); break;
-                    case 'name': setWeapons(sortWeaponsByNameDescending(weaponArray)); break;
-                    case 'damage': setWeapons(sortWeaponsByDamageDescending(weaponArray)); break;
-                    case 'slots': setWeapons(sortWeaponsBySlotsDescending(weaponArray)); break;
-                    case 'rslot': setWeapons(sortWeaponsByRSlotDescending(weaponArray)); break;
-                    case 'edamage': setWeapons(sortWeaponsByEDamageDescending(weaponArray)); break;
-                    case 'dbonus': setWeapons(sortWeaponsByDBonusDescending(weaponArray)); break;
-                    case 'affinity': setWeapons(sortWeaponsByAffinityDescending(weaponArray)); break;
-                    case 'sharpness': setWeapons(sortWeaponsBySharpnessDescending(weaponArray)); break;
-                }
-                setState(2);
-                break;
-
-            case 2: setWeapons(weapons); setState(0); break;
-        }
-             
-    }
-
-    function startSort(event) {
-        let type = event.target.getAttribute('type');
-        sortWeapons(type, sortState);
+        let url = '/api/requestAPI';
+        let options = {            
+            method: 'POST',
+            body: query,
+        };
+        let response = await (await fetch(url, options)).json();   
+        setWeapons(response);
     }
 
     return  (
         <>
-        <div className={styles.buttons}>            
-            <span className={styles.button} onClick={startSort} type='rarity'>Rarity</span>
-            <span className={styles.button} onClick={startSort} type='type'>Type</span>
-            <span className={styles.button} onClick={startSort} type='name'>Name</span>
-            <span className={styles.button} onClick={startSort} type='damage'>Damage</span>
-            <span className={styles.button} onClick={startSort} type='slots'>Slots</span>
-            <span className={styles.button} onClick={startSort} type='rslot'>R. Slot</span>
-            <span className={styles.button} onClick={startSort} type='edamage'>E. Damage</span>
-            <span className={styles.button} onClick={startSort} type='dbonus'>D. Bonus</span>
-            <span className={styles.button} onClick={startSort} type='affinity'>Affinity</span>
-            <span className={styles.button} onClick={startSort} type='sharpness'>Sharpness</span>
-        </div>
+        
+        <form onSubmit={handleSubmit} className={styles.filterContainer}>
+
+            <div className={styles.inputContainer}>
+
+                <div className={styles.input}>
+                    <label for='sortBy'>Sort By:</label>
+                    <select name='sortBy' id='sortBy'>
+                        <option value='type'>Type</option>
+                        <option value='rarity'>Rarity</option>
+                        <option value='damage'>Damage</option>
+                        <option value='name'>Name</option>
+                        <option value='slotLevel'>Slot Levels</option>
+                        <option value='rampageSlot'>Rampage Slot</option>
+                        <option value='defenseBonus'>Defense Bonus</option>
+                        <option value='affinity'>Affinity</option>
+                        <option value='elementDamage'>Element Damage</option>
+                    </select>
+                </div>
+
+                <div className={styles.input}>
+                    <label for='sortOrder'>Order:</label>
+                    <select name='sortOrder' id='sortOrder'>
+                        <option value='asc'>Ascending</option>
+                        <option value='desc'>Descending</option>
+                    </select>
+                </div>                        
+
+                <div className={styles.input}>
+                    <label for='name'>Name:</label>
+                    <input type='text' name='name' id='name' />
+                </div>
+
+                <div className={styles.input}>
+                    <label for='type'>Type:</label>
+                    <select name='type' id='type'>
+                        <option value={null}> </option>
+                        <option value='greatSword'>Great Sword</option>
+                        <option value='swordAndShield'>Sword &amp; Shield</option>
+                        <option value='dualBlade'>Dual Blades</option>
+                        <option value='longSword'>Long Sword</option>
+                        <option value='hammer'>Hammer</option>
+                        <option value='huntingHorn'>Hunting Horn</option>
+                        <option value='lance'>Lance</option>
+                        <option value='gunlance'>Gunlance</option>
+                        <option value='switchAxe'>Switch Axe</option>
+                        <option value='chargeBlade'>Charge Blade</option>
+                        <option value='insectGlaive'>Insect Glaive</option>
+                        <option value='bow'>Bow</option>
+                        <option value='lightBowgun'>Light Bowgun</option>
+                        <option value='heavyBowgun'>Heavy Bowgun</option>
+                    </select>
+                </div>
+
+                <div className={styles.input}>
+                    <label for='damage'>Damage:</label>
+                    <input type='number' name='damage' id='damage' />
+                </div>
+
+                <div className={styles.input}>
+                    <label for='slotLevels'>Slot Levels:</label>
+                    <input type='number' name='slotLevels' id='slotLevels' />
+                </div>                                                                                    
+
+                <div className={styles.input}>
+                    <label for='rampageSlot'>Ramapge Slot:</label>
+                    <input type='number' name='rampageSlot' id='rampageSlot' />
+                </div>
+
+                <div className={styles.input}>
+                    <label for='element'>Element:</label>
+                    <select name='element' id='element'>
+                        <option value={null}> </option>
+                        <option value='Fire'>Fire</option>
+                        <option value='Water'>Water</option>
+                        <option value='Thunder'>Thunder</option>
+                        <option value='Ice'>Ice</option>
+                        <option value='Dragon'>Dragon</option>
+                        <option value='Poison'>Poison</option>
+                        <option value='Paralysis'>Paralysis</option>
+                        <option value='Sleep'>Sleep</option>
+                        <option value='Blast'>Blast</option>
+                    </select>
+                </div>
+
+                <div className={styles.input}>
+                    <label for='elementDamage'>Element Damage:</label>
+                    <input type='number' name='elementDamage' id='elementDamage' />
+                </div>
+
+                <div className={styles.input}>
+                    <label for='defenseBonus'>Defense Bonus:</label>
+                    <input type='number' name='defenseBonus' id='defenseBonus' />
+                </div>                
+
+                <div className={styles.input}>
+                    <label for='affinity'>Affinity:</label>
+                    <input type='number' name='affinity' id='affinity' />
+                </div>
+
+                <div className={styles.input}>
+                    <label for='rarity'>Rarity:</label>
+                    <select name='rarity' id='rarity'>
+                        <option value={null}> </option>
+                        <option value={1}>1</option>
+                        <option value={2}>2</option>
+                        <option value={3}>3</option>
+                        <option value={4}>4</option>
+                        <option value={5}>5</option>
+                        <option value={6}>6</option>
+                        <option value={7}>7</option>
+                        <option value={8}>8</option>
+                        <option value={9}>9</option>
+                        <option value={10}>10</option>
+                    </select>
+                </div>
+
+            </div>                
+
+            <button type='submit'>Apply Filter</button>
+
+        </form>        
 
         <div className={styles.weapons}>
-            {weaponArray.map((weapon) => (                
+            {(weaponArray) ? (
+                <>
+                {weaponArray.map((weapon) => (                
                 <WeaponRow weapon={weapon} />
             ))}
+                </>
+            ) : (
+                <>Loading...</>
+            )}            
         </div>
         </>
     );

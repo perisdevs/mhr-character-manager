@@ -4,16 +4,31 @@
     align-items: center;    
 }
 
-.buttons {
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;    
+    margin: auto;
+    border-bottom: 2px solid burlywood;
+    padding-bottom: 1vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+}
+
+.inputContainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 50vw;
-    justify-content: space-around;    
-    margin: auto;
+    justify-content: space-evenly;
+    width: 100%;        
 }
 
-.button {    
-    margin: 5px;
-    cursor: pointer;
+.input {   
+    display: flex; 
+    flex-direction: row;        
+    width: 40%;
+}
+
+.input > * {
+    width: 50%;    
 }
