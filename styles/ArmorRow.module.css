@@ -1,0 +1,26 @@
+.armor {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    border-bottom: 1px solid burlywood;
+}
+
+.armor > * {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;    
+    width: 20%;
+}
+
+.skillSlots {
+    border: solid blue 2px;
+}
+
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-content: flex-start;
+}
