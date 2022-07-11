@@ -1,5 +1,5 @@
 import WeaponRow from "./weaponRow";
-import styles from '../styles/WeaponDisplayRows.module.css';
+import styles from '../styles/ObjectDisplayRows.module.css';
 import { useState } from 'react';
 
 export default function WeaponDisplayRows({ weapons }) {    
@@ -153,7 +153,7 @@ export default function WeaponDisplayRows({ weapons }) {
 
         </form>        
 
-        <div className={styles.weapons}>
+        <div className={styles.objects}>
             {(weaponArray) ? (
                 <>
                 {weaponArray.map((weapon) => (                
