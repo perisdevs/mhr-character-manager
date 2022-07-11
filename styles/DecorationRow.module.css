@@ -1,0 +1,16 @@
+.decoration {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    border-bottom: 1px solid burlywood;
+}
+
+.decoration > * {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 10vh;
+    width: 20%;
+}

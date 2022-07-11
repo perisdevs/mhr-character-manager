@@ -147,9 +147,9 @@ export default function WeaponDisplayRows({ weapons }) {
                     </select>
                 </div>
 
-            </div>                
+                <button type='submit'>Apply Filter</button>
 
-            <button type='submit'>Apply Filter</button>
+            </div>                            
 
         </form>        
 
