@@ -1,0 +1,21 @@
+.skill {
+    display: flex;
+    flex-direction: row;    
+    width: 80%;
+    border-bottom: 1px solid burlywood;
+}
+
+.skill > * {
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+    width: 20%;    
+}
+
+.level {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
