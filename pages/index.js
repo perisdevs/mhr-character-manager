@@ -20,7 +20,7 @@ export default function Home() {
           </div>
 
           <div className={styles.links}>
-            <Link href='/matesssrials'><a>Materials</a></Link>        
+            <Link href='/materials'><a>Materials</a></Link>        
           </div>
 
         </div>      
