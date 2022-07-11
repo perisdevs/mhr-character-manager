@@ -145,11 +145,11 @@ export default function WeaponDisplayRows({ weapons }) {
                         <option value={9}>9</option>
                         <option value={10}>10</option>
                     </select>
-                </div>
+                </div>                
 
-                <button type='submit'>Apply Filter</button>
+            </div>    
 
-            </div>                            
+            <button type='submit'>Apply Filter</button>                        
 
         </form>        
 

@@ -77,11 +77,11 @@ export default function DecorationDisplayRows({ decorations }) {
                         <option value={9}>9</option>
                         <option value={10}>10</option>
                     </select>
-                </div>
-
-                <button type='submit'>Apply Filter</button>
+                </div>                
 
             </div>  
+
+            <button type='submit'>Apply Filter</button>
 
         </form>
 
