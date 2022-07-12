@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import Layout from '../../components/layout';
 import WeaponDisplayRows from '../../components/weaponDisplayRows';
-import { requestJSONObject } from '../../lib/requests';
+import { queryExternalAPI, requestJSONObject } from '../../lib/requests';
 
 export async function getServerSideProps() {
-    let weapons = await requestJSONObject('localhost', 3001, '/weapons');
+    let weapons = await queryExternalAPI('/weapons')
 
     return {
         props: {

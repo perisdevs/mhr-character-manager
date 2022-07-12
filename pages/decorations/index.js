@@ -1,9 +1,9 @@
 import DecorationDisplayRows from '../../components/decorationDisplayRows';
 import Layout from '../../components/layout';
-import { requestJSONObject } from '../../lib/requests';
+import { queryExternalAPI, requestJSONObject } from '../../lib/requests';
 
 export async function getServerSideProps() {
-    let decorations = await requestJSONObject('localhost', 3001, '/decorations');
+    let decorations = await queryExternalAPI('/decorations');
 
     return {
         props: {

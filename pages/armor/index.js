@@ -1,9 +1,9 @@
 import ArmorDisplayRows from '../../components/armorDisplayRows';
 import Layout from '../../components/layout';
-import { requestJSONObject } from '../../lib/requests';
+import { queryExternalAPI, requestJSONObject } from '../../lib/requests';
 
 export async function getServerSideProps() {
-  let armor = await requestJSONObject('localhost', 3001, '/armor');
+  let armor = await queryExternalAPI('/armor')
 
   return {
     props: {

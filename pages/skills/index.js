@@ -1,9 +1,9 @@
 import SkillDisplayRows from "../../components/skillDisplayRows";
 import Layout from '../../components/layout';
-import { requestJSONObject } from "../../lib/requests";
+import { queryExternalAPI, requestJSONObject } from "../../lib/requests";
 
 export async function getServerSideProps() {
-    let skills = await requestJSONObject('localhost', 3001, '/skills');
+    let skills = await queryExternalAPI('/skills')
 
     return {
         props: {

@@ -1,9 +1,9 @@
 import Layout from '../../components/layout';
 import MaterialDisplayRows from '../../components/materialDisplayRow';
-import { requestJSONObject } from '../../lib/requests';
+import { queryExternalAPI, requestJSONObject } from '../../lib/requests';
 
 export async function getServerSideProps() {
-    let materials = await requestJSONObject('localhost', 3001, '/materials');
+    let materials = await queryExternalAPI('/materials')
 
     return {
         props: {
