@@ -8,11 +8,11 @@ export default function Layout({ children }) {
         <div className={styles.container}>
             <Head>
                 <link rel='icon' href='favicon.ico' />
-                <title>MHR Wiki</title>
+                <title>MHRise Item DB</title>
             </Head>
             <header className={styles.header}>
                 <Link href='/'>
-                    <a><h2>MHRise Wiki</h2></a>
+                    <a><h2>MHRise Item DB</h2></a>
                 </Link>                
             </header>
             <main>
