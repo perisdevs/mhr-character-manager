@@ -23,7 +23,12 @@ export default function Home() {
             <Link href='/materials'><a>Materials</a></Link>        
           </div>
 
-        </div>      
+          <div className={styles.links}>
+            <Link href='/characterBuilder'>Charater Builder</Link>
+            <Link href='/grindManager'>Grind Manager</Link>
+          </div>
+
+        </div>        
 
       </div>
     </Layout>
