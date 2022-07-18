@@ -40,6 +40,8 @@
 
 .armorPiece {    
     width: 20%;
+    padding-left: 1vw;
+    padding-right: 1vw;
 }
 
 .toolbar {

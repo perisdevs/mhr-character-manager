@@ -19,17 +19,17 @@ export async function getServerSideProps() {
     };
 }
 
-export default function Home(props) {
-
-    const [itemDisplay, setDisplay] = useState(<WeaponDisplayRows weapons={props.weapons} />);
+export default function Home(props) {    
     
     const [character, setCharacter] = useState(new Character());
-    const [characterDisplay, setCharacterDisplay] = useState(<CharacterDisplay character={character} />);
+    const [characterDisplay, setCharacterDisplay] = useState(<CharacterDisplay character={character} />);    
     
     const updateCharacterFunction = function() {
         setCharacter(character);
         setCharacterDisplay(<CharacterDisplay character={character} />);
     }
+
+    const [itemDisplay, setDisplay] = useState(<WeaponDisplayRows weapons={props.weapons} character={character} addFn={updateCharacterFunction} />);
 
     return (
         <Layout>
