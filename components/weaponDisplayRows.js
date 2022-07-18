@@ -2,7 +2,7 @@ import WeaponRow from "./weaponRow";
 import styles from '../styles/ObjectDisplayRows.module.css';
 import { useState } from 'react';
 
-export default function WeaponDisplayRows({ weapons }) {    
+export default function WeaponDisplayRows({ weapons, character, addFn }) {    
     
     const [weaponArray, setWeapons] = useState(weapons);        
 
@@ -157,7 +157,7 @@ export default function WeaponDisplayRows({ weapons }) {
             {(weaponArray) ? (
                 <>
                 {weaponArray.map((weapon) => (                
-                <WeaponRow weapon={weapon} />
+                <WeaponRow weapon={weapon} character={character} addFn={addFn} />
             ))}
                 </>
             ) : (

@@ -1,7 +1,7 @@
 import styles from '../styles/ArmorRow.module.css';
 import Skill from './skill';
 
-export default function ArmorRow({ armor }) {
+export default function ArmorRow({ armor, character, addFn }) {
 
     return (
         <div className={styles.armor}>
@@ -24,6 +24,15 @@ export default function ArmorRow({ armor }) {
                     <Skill skill={skill} />
                 ))}
             </div>
+
+            {(character) ? (
+                <div className={styles.armorProp}>
+                    <button onClick={() => {
+                        character.setArmor(armor);
+                        addFn(character);
+                    }}>Add</button>
+                </div>
+            ) : (<></>)}
         </div>
     )
 }

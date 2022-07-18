@@ -1,0 +1,60 @@
+.builderContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;    
+}
+
+.summaryContainer {    
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-bottom: 2.5vw;
+    margin-top: 2.5vw;
+}
+
+.characterProp {
+    width: 50%;
+}
+
+.summaryRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.summaryRow div:first-child {
+    margin-right: auto;
+}
+
+.summaryRow div:last-child {
+    margin-left: auto;
+}
+
+.armorContainer {    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-bottom: 2.5vh;
+}
+
+.armorPiece {    
+    width: 20%;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-top: 1px solid burlywood;
+    border-bottom: 1px solid burlywood;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    margin-bottom: 2.5vh;
+}
+
+.toolLink {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    cursor: pointer;
+}

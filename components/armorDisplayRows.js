@@ -2,7 +2,7 @@ import ArmorRow from "./armorRow";
 import styles from '../styles/ObjectDisplayRows.module.css';
 import { useState } from 'react';
 
-export default function ArmorDisplayRows({ armor }) {
+export default function ArmorDisplayRows({ armor, character, addFn }) {
 
     const [armorArray, setArmor] = useState(armor);
 
@@ -137,7 +137,7 @@ export default function ArmorDisplayRows({ armor }) {
             {(armorArray) ? (
                 <>
                 {armorArray.map((armor) => (
-                    <ArmorRow armor={armor} />
+                    <ArmorRow armor={armor} character={character} addFn={addFn} />                    
                 ))}
                 </>
             ) : (

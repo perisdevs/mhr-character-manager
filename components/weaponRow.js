@@ -1,7 +1,7 @@
 import styles from '../styles/WeaponRow.module.css';
 import Sharpness from './sharpness';
 
-export default function WeaponRow({ weapon }) {
+export default function WeaponRow({ weapon, character, addFn }) {
 
     return (
         <div className={styles.weapon}>
@@ -37,6 +37,15 @@ export default function WeaponRow({ weapon }) {
                     <>---</>
                 )}
             </div>
+
+            {(character) ? (
+                <div className={styles.weaponProp}>
+                    <button onClick={() => {
+                        character.setWeapon(weapon);
+                        addFn(character);
+                    }}>Add</button>
+                </div>
+            ) : (<></>)}
         </div>
     );
 }
