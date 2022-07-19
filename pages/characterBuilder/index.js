@@ -34,6 +34,10 @@ export default function Home(props) {
     return (
         <Layout>
 
+            <div className={styles.header}>
+                <p>The character builder is still under construction and has limited functionality</p>
+            </div>
+
             {characterDisplay}
 
             <div className={styles.toolbar}>
