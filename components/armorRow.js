@@ -11,7 +11,7 @@ export default function ArmorRow({ armor, character, addFn }) {
             <div className={styles.armorProp}>{armor.defense}</div>
             <div className={styles.skillSlots}>
                 {armor.skillSlots.map((slot) => (
-                    <text>{slot}</text>
+                    <text key={slot}>{slot}</text>
                 ))}
                 </div>
             <div className={styles.armorProp}>{armor.fire}</div>
@@ -21,7 +21,7 @@ export default function ArmorRow({ armor, character, addFn }) {
             <div className={styles.armorProp}>{armor.dragon}</div>
             <div className={styles.skills}>
                 {armor.skills.map((skill) => (
-                    <Skill skill={skill} />
+                    <Skill skill={skill} key={skill.name} />
                 ))}
             </div>
 
