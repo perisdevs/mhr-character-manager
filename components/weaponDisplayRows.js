@@ -36,7 +36,7 @@ export default function WeaponDisplayRows({ weapons, character, addFn }) {
             <div className={styles.inputContainer}>
 
                 <div className={styles.input}>
-                    <label for='sortBy'>Sort By:</label>
+                    <label htmlFor='sortBy'>Sort By:</label>
                     <select name='sortBy' id='sortBy'>
                         <option value='type'>Type</option>
                         <option value='rarity'>Rarity</option>
@@ -51,7 +51,7 @@ export default function WeaponDisplayRows({ weapons, character, addFn }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='sortOrder'>Order:</label>
+                    <label htmlFor='sortOrder'>Order:</label>
                     <select name='sortOrder' id='sortOrder'>
                         <option value='asc'>Ascending</option>
                         <option value='desc'>Descending</option>
@@ -59,12 +59,12 @@ export default function WeaponDisplayRows({ weapons, character, addFn }) {
                 </div>                        
 
                 <div className={styles.input}>
-                    <label for='name'>Name:</label>
+                    <label htmlFor='name'>Name:</label>
                     <input type='text' name='name' id='name' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='type'>Type:</label>
+                    <label htmlFor='type'>Type:</label>
                     <select name='type' id='type'>
                         <option value={null}> </option>
                         <option value='greatSword'>Great Sword</option>
@@ -85,22 +85,22 @@ export default function WeaponDisplayRows({ weapons, character, addFn }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='damage'>Damage:</label>
+                    <label htmlFor='damage'>Damage:</label>
                     <input type='number' name='damage' id='damage' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='slotLevels'>Slot Levels:</label>
+                    <label htmlFor='slotLevels'>Slot Levels:</label>
                     <input type='number' name='slotLevels' id='slotLevels' />
                 </div>                                                                                    
 
                 <div className={styles.input}>
-                    <label for='rampageSlot'>Ramapge Slot:</label>
+                    <label htmlFor='rampageSlot'>Ramapge Slot:</label>
                     <input type='number' name='rampageSlot' id='rampageSlot' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='element'>Element:</label>
+                    <label htmlFor='element'>Element:</label>
                     <select name='element' id='element'>
                         <option value={null}> </option>
                         <option value='Fire'>Fire</option>
@@ -116,22 +116,22 @@ export default function WeaponDisplayRows({ weapons, character, addFn }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='elementDamage'>Element Damage:</label>
+                    <label htmlFor='elementDamage'>Element Damage:</label>
                     <input type='number' name='elementDamage' id='elementDamage' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='defenseBonus'>Defense Bonus:</label>
+                    <label htmlFor='defenseBonus'>Defense Bonus:</label>
                     <input type='number' name='defenseBonus' id='defenseBonus' />
                 </div>                
 
                 <div className={styles.input}>
-                    <label for='affinity'>Affinity:</label>
+                    <label htmlFor='affinity'>Affinity:</label>
                     <input type='number' name='affinity' id='affinity' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='rarity'>Rarity:</label>
+                    <label htmlFor='rarity'>Rarity:</label>
                     <select name='rarity' id='rarity'>
                         <option value={null}> </option>
                         <option value={1}>1</option>

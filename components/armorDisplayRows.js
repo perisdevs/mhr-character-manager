@@ -36,7 +36,7 @@ export default function ArmorDisplayRows({ armor, character, addFn }) {
             <div className={styles.inputContainer}>
 
                 <div className={styles.input}>
-                    <label for='sortBy'>Sort By:</label>
+                    <label htmlFor='sortBy'>Sort By:</label>
                     <select name='sortBy' id='sortBy'>
                         <option value='type'>Type</option>
                         <option value='rarity'>Rarity</option>
@@ -51,7 +51,7 @@ export default function ArmorDisplayRows({ armor, character, addFn }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='sortOrder'>Order:</label>
+                    <label htmlFor='sortOrder'>Order:</label>
                     <select name='sortOrder' id='sortOrder'>
                         <option value='asc'>Ascending</option>
                         <option value='desc'>Descending</option>
@@ -59,12 +59,12 @@ export default function ArmorDisplayRows({ armor, character, addFn }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='name'>Name:</label>
+                    <label htmlFor='name'>Name:</label>
                     <input type='text' name='name' id='name' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='type'>Type:</label>
+                    <label htmlFor='type'>Type:</label>
                     <select name='type' id='type'>
                         <option value={null}> </option>
                         <option value='head'>Head</option>
@@ -76,42 +76,42 @@ export default function ArmorDisplayRows({ armor, character, addFn }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='skillSlots'>Skill Slots:</label>
+                    <label htmlFor='skillSlots'>Skill Slots:</label>
                     <input type='number' name='skillSlots' id='skillSlots' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='defense'>Defense:</label>
+                    <label htmlFor='defense'>Defense:</label>
                     <input type='number' name='defense' id='defense' />
                 </div>                
 
                 <div className={styles.input}>
-                    <label for='fire'>Fire</label>
+                    <label htmlFor='fire'>Fire</label>
                     <input type='number' name='fire' id='fire' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='water'>Water</label>
+                    <label htmlFor='water'>Water</label>
                     <input type='number' name='water' id='water' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='thunder'>Thunder</label>
+                    <label htmlFor='thunder'>Thunder</label>
                     <input type='number' name='thunder' id='thunder' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='ice'>Ice</label>
+                    <label htmlFor='ice'>Ice</label>
                     <input type='number' name='ice' id='ice' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='dragon'>Dragon</label>
+                    <label htmlFor='dragon'>Dragon</label>
                     <input type='number' name='dragon' id='dragon' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='rarity'>Rarity:</label>
+                    <label htmlFor='rarity'>Rarity:</label>
                     <select name='rarity' id='rarity'>
                         <option value={null}> </option>
                         <option value={1}>1</option>

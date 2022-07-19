@@ -36,7 +36,7 @@ export default function DecorationDisplayRows({ decorations }) {
             <div className={styles.inputContainer}>
 
                 <div className={styles.input}>
-                    <label for='sortBy'>Sort By:</label>
+                    <label htmlFor='sortBy'>Sort By:</label>
                     <select name='sortBy' id='sortBy'>
                         <option value='slotLevel'>Slot Level</option>
                         <option value='name'>Name</option>
@@ -45,7 +45,7 @@ export default function DecorationDisplayRows({ decorations }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='sortOrder'>Order:</label>
+                    <label htmlFor='sortOrder'>Order:</label>
                     <select name='sortOrder' id='sortOrder'>
                         <option value='asc'>Ascending</option>
                         <option value='desc'>Descending</option>
@@ -53,17 +53,17 @@ export default function DecorationDisplayRows({ decorations }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='name'>Name:</label>
+                    <label htmlFor='name'>Name:</label>
                     <input type='text' name='name' id='name' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='slotLevel'>Slot Level:</label>
+                    <label htmlFor='slotLevel'>Slot Level:</label>
                     <input type='number' name='slotLevel' id='slotLevel' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='rarity'>Rarity:</label>
+                    <label htmlFor='rarity'>Rarity:</label>
                     <select name='rarity' id='rarity'>
                         <option value={null}> </option>
                         <option value={1}>1</option>

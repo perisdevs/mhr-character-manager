@@ -36,7 +36,7 @@ export default function SkillDisplayRows({ skills }) {
             <div className={styles.inputContainer}>
 
                 <div className={styles.input}>
-                    <label for='sortBy'>Sort By:</label>
+                    <label htmlFor='sortBy'>Sort By:</label>
                     <select name='sortBy' id='sortBy'>
                         <option value='maxLevel'>Max Level</option>
                         <option value='name'>Name</option>
@@ -44,7 +44,7 @@ export default function SkillDisplayRows({ skills }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='sortOrder'>Order:</label>
+                    <label htmlFor='sortOrder'>Order:</label>
                     <select name='sortOrder' id='sortOrder'>
                         <option value='asc'>Ascending</option>
                         <option value='desc'>Descending</option>
@@ -52,12 +52,12 @@ export default function SkillDisplayRows({ skills }) {
                 </div>
 
                 <div className={styles.input}>
-                    <label for='name' id='name'>Name:</label>
+                    <label htmlFor='name' id='name'>Name:</label>
                     <input type='text' name='name' id='name' />
                 </div>
 
                 <div className={styles.input}>
-                    <label for='maxLevel' id='maxLevel'>Max Level:</label>
+                    <label htmlFor='maxLevel' id='maxLevel'>Max Level:</label>
                     <input type='number' name='maxLevel' id='maxLevel' />
                 </div>
 
