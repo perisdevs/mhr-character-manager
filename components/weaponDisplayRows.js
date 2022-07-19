@@ -157,7 +157,7 @@ export default function WeaponDisplayRows({ weapons, character, addFn }) {
             {(weaponArray) ? (
                 <>
                 {weaponArray.map((weapon) => (                
-                <WeaponRow weapon={weapon} character={character} addFn={addFn} />
+                <WeaponRow weapon={weapon} character={character} addFn={addFn} key={weapon.name} />
             ))}
                 </>
             ) : (

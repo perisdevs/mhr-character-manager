@@ -89,7 +89,7 @@ export default function DecorationDisplayRows({ decorations }) {
             {(decorationArray) ? (
                 <>
                 {decorationArray.map((decoration) => (
-                    <DecorationRow decoration={decoration} />
+                    <DecorationRow decoration={decoration} key={decoration.name} />
                 ))}
                 </>
             ) : (

@@ -9,7 +9,7 @@ export default function MaterialRow({ material }) {
             <div className={styles.materialProp}>{material.type}</div>
             <div className={styles.materialProp}>
                 {material.sources.map((source) => (
-                    <text className={styles.source}>{source}</text>
+                    <text className={styles.source} key={source}>{source}</text>
                 ))}
             </div>
         </div>

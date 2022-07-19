@@ -71,7 +71,7 @@ export default function SkillDisplayRows({ skills }) {
             {(skillArray) ? (
                 <>
                 {skillArray.map((skill) => (
-                    <SkillRow skill={skill} />
+                    <SkillRow skill={skill} key={skill.name} />
                 ))}
                 </>
             ) : (

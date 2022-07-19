@@ -137,7 +137,7 @@ export default function ArmorDisplayRows({ armor, character, addFn }) {
             {(armorArray) ? (
                 <>
                 {armorArray.map((armor) => (
-                    <ArmorRow armor={armor} character={character} addFn={addFn} />                    
+                    <ArmorRow armor={armor} character={character} addFn={addFn} key={armor.name} />                    
                 ))}
                 </>
             ) : (

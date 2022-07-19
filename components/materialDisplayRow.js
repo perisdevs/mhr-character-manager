@@ -89,7 +89,7 @@ export default function MaterialDisplayRows({ materials }) {
             {(materialArray) ? (
                 <>
                 {materialArray.map((material) => (
-                    <MaterialRow material={material} />
+                    <MaterialRow material={material} key={material.name} />
                 ))}
                 </>
             ) : (
