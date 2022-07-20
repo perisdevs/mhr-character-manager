@@ -10,7 +10,7 @@ export default function WeaponDisplayRows({ weapons, character, addFn }) {
         event.preventDefault();
         setWeapons(null);
 
-        let query = '/weapons?';
+        let query = '/weapons?pageSize=1000';
 
         const inputs = Array.from(event.target.elements);
         

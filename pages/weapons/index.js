@@ -4,7 +4,7 @@ import WeaponDisplayRows from '../../components/weaponDisplayRows';
 import { queryExternalAPI, requestJSONObject } from '../../lib/requests';
 
 export async function getServerSideProps() {
-    let weapons = await queryExternalAPI('/weapons')
+    let weapons = await queryExternalAPI('/weapons?pageSize=1000');
 
     return {
         props: {
